@@ -201,6 +201,8 @@ html {
     padding: 1rem 0;
 }
 
+
+
 .navbar.scrolled {
     padding: 0.7rem 0;
     box-shadow: var(--shadow-md);
@@ -210,7 +212,6 @@ html {
     font-weight: 700;
     font-size: 1.8rem;
     background: var(--gradient-primary);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1px;
 }
@@ -268,6 +269,17 @@ html {
     color: white;
 }
 
+
+
+
+.Ranjith{
+
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+
+
+}
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
@@ -365,6 +377,15 @@ html {
     width: 100%;
     z-index: 1;
 }
+
+.carousel-control-prev {
+  left: -80px; /* negative moves it outside, positive moves it inward */
+}
+
+.carousel-control-next {
+  right: -80px; /* negative moves it outside, positive moves it inward */
+}
+
 
 .floating-card {
     position: absolute;
@@ -482,15 +503,8 @@ html {
     transition: var(--transition);
 }
 
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+
+
 
 .stat-label {
     font-size: 0.9rem;
@@ -993,6 +1007,69 @@ hr {
 }
 
 /* Responsive Design */
+
+
+/* ====== Show carousel indicators only on mobile devices ====== */
+@media (max-width: 576px) {
+  /* Prevent unwanted scroll on mobile */
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  #key-people {
+    overflow: hidden;
+  }
+
+  #keyPeopleCarousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #keyPeopleCarousel .carousel-inner {
+    overflow: hidden;
+  }
+
+  /* Indicators (balls) */
+  #keyPeopleCarousel .carousel-indicators {
+    display: flex !important;
+    justify-content: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 5px; /* lowered slightly to prevent overflow */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 10;
+  }
+
+  #keyPeopleCarousel .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #keyPeopleCarousel .carousel-indicators .active {
+    background-color: #0d6efd;
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Hide any bottom overflow from buttons or content */
+  #keyPeopleCarousel .carousel-control-prev,
+  #keyPeopleCarousel .carousel-control-next {
+    bottom: 45px !important;
+  }
+}
+
+
+
+
+
 @media (max-width: 992px) {
     .hero-title {
         font-size: 2.8rem;
