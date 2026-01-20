@@ -809,9 +809,18 @@ html {
     height: 100%;
 }
 
+/* .contact-info {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem 2.5rem;
+    box-shadow: var(--shadow-md);
+    height: 85%;
+} */
+
+
 .contact-info-item {
     display: flex;
-    margin-bottom: 2rem;
+
 }
 
 .contact-info-item .icon {
@@ -823,10 +832,26 @@ html {
     align-items: center;
     justify-content: center;
     color: white;
-    margin-right: 1.5rem;
+    margin-right: 1rem;
     flex-shrink: 0;
 }
-
+.icon-linkedin{
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+.icon-linkedin a{
+    color: white;
+}
 .contact-info-item .content h5 {
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -836,6 +861,86 @@ html {
     margin-bottom: 0.25rem;
     color: var(--text-light);
 }
+/* Wrapper */
+.contact-info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* centers items */
+  align-items: stretch;
+  gap: 20px;                 /* consistent spacing */
+}
+
+/* Each item behaves like a responsive card */
+.contact-info-item{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 12px;
+
+
+  /* Responsive width control */
+  flex: 1 1 260px;           /* grows, wraps; min ~260px */
+  max-width: 320px;          /* keeps them from becoming too wide */
+}
+
+/* Icon styling */
+.contact-info-item .icon{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--gradient-primary);
+  color: white;
+  flex: 0 0 46px;
+}
+
+/* Text spacing */
+.contact-info-item .content h5{
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.contact-info-item .content p{
+  margin: 0;
+  line-height: 1.35;
+}
+
+.contact-info-item a{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/* --- Media queries: all screen sizes --- */
+
+/* Mobile: stack full width */
+@media (max-width: 575.98px){
+  .contact-info{
+    gap: 14px;
+  }
+  .contact-info-item{
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+/* Small tablets: 2 columns */
+@media (min-width: 576px) and (max-width: 991.98px){
+  .contact-info-item{
+    flex: 1 1 calc(50% - 20px);
+    max-width: 420px;
+  }
+}
+
+/* Large screens: tighter, aligned cards */
+@media (min-width: 992px){
+  .contact-info-item{
+    flex: 0 1 280px; /* consistent card width */
+    max-width: 320px;
+  }
+}
+
 
 .social-links {
     display: flex;
@@ -1138,7 +1243,25 @@ hr {
     }
     
     .contact-info {
-        padding: 1.5rem;
+        /* padding: 1.5rem; */
+        padding: 1.5rem 1.5rem 4rem 1.5rem;
+    }
+}
+@media (max-width: 1194px){
+   
+    
+    .contact-info {
+        /* padding: 1.5rem; */
+        padding: 1.5rem 1.5rem 4rem 1.5rem;
+    }
+}
+
+@media (max-width: 1199px) {
+   
+    
+    .contact-info {
+        /* padding: 1.5rem; */
+        padding: 1.5rem 1.5rem 4rem 1.5rem;
     }
 }
 
@@ -1162,4 +1285,9 @@ hr {
 
 [data-aos].aos-animate {
     pointer-events: auto;
+}
+
+.content a{
+    text-decoration: none;
+    color: var(--text-light);
 }
